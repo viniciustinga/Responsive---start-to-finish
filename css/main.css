@@ -457,7 +457,8 @@ h2 {
 
 .title-large {
   font-size: 3rem;
-  font-weight: 900; }
+  font-weight: 900;
+  line-height: 0.9; }
   .title-large span {
     font-weight: 300; }
 
@@ -476,6 +477,18 @@ h2 {
     @media (min-width: 495px) {
       .title-box + .bg-primary {
         padding-top: 8em; } }
+
+.title-footer {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1; }
+  .title-footer::before, .title-footer::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: white;
+    opacity: 0.25;
+    margin: 0.75em 0; }
 
 .text-intro {
   font-size: 1.2rem; }
@@ -577,6 +590,43 @@ h2 {
     .sales-points .sales-point:last-child {
       margin-bottom: 0; }
 
+footer {
+  background: #444;
+  color: white;
+  padding: 5em 0;
+  position: relative; }
+  footer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url(../img/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05; }
+  footer a {
+    color: white; }
+
+.social-links {
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-around;
+  opacity: 0.8;
+  margin: 0.7em 0; }
+
+.nav-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto; }
+  .nav-footer a {
+    text-decoration: none;
+    font-weight: 700; }
+
 .btn {
   display: inline-block;
   padding: 0.75em 2.5em;
@@ -598,5 +648,14 @@ h2 {
   .btn--secondary:hover, .btn--secondaryfocus {
     background: white;
     color: #048ca8; }
+
+.cta {
+  background-color: #16db93;
+  background-image: url(../img/call-to-action-background.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5em 0;
+  background-blend-mode: multiply;
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */
