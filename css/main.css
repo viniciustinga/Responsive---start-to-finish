@@ -405,6 +405,31 @@ template {
 [hidden] {
   display: none; }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap; }
+
+.col {
+  flex: 0 0 100%;
+  padding: 0 0.75em; }
+  @media (min-width: 725px) {
+    .col:first-of-type {
+      padding-left: 0; }
+    .col:last-of-type {
+      padding-right: 0; } }
+
+.col--full {
+  flex: 0 0 100%; }
+
+@media(min-width: 725px) {
+  .col--1-3 {
+    flex-basis: 33.3333%; }
+
+  .col--2-3 {
+    flex-basis: 66.6666%; }
+
+  .col--1-2 {
+    flex-basis: 50%; } }
 *, *::before, *::after {
   box-sizing: border-box; }
 
@@ -428,7 +453,9 @@ img {
 
 .lg-screen {
   display: none; }
-
+@media(min-width: 725px) {
+  .lg-screen {
+    display: block; } }
 .bg-primary {
   background: #048ca8;
   color: white;
@@ -477,7 +504,9 @@ h2 {
     @media (min-width: 495px) {
       .title-box + .bg-primary {
         padding-top: 8em; } }
-
+@media(min-width: 725px) {
+  .title-box {
+    max-width: 700px; } }
 .title-footer {
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -491,17 +520,10 @@ h2 {
     margin: 0.75em 0; }
 
 .text-intro {
-  font-size: 1.2rem; }
-
-.grid {
-  display: flex;
-  flex-wrap: wrap; }
-
-.col {
-  flex: 0 0 100%; }
-
-.col--full {
-  flex: 0 0 100%; }
+  font-size: 1.2rem;
+  font-weight: 900; }
+  .text-intro span {
+    font-weight: 300; }
 
 .main-nav {
   background: #d31869;
@@ -580,7 +602,15 @@ h2 {
   padding-top: 8em;
   padding-bottom: 8em;
   text-align: center; }
-
+@media(min-width: 725px) {
+  .hero {
+    text-align: left;
+    padding-bottom: 0;
+    height: 80vmin;
+    min-height: 860px; } }
+@media(min-width: 725px) {
+  .hero-text {
+    margin-top: 10vmax; } }
 .sales-points {
   padding: 10vh 0 0; }
   .sales-points .sales-point {
@@ -589,6 +619,21 @@ h2 {
       margin-top: 1.5em; }
     .sales-points .sales-point:last-child {
       margin-bottom: 0; }
+@media(min-width: 725px) {
+  .sales-points .sales-point:first-of-type {
+    margin-top: 0; } }
+.promo .bg-primary {
+  text-align: center;
+  padding-left: 7%;
+  padding-top: 7.5em;
+  padding-bottom: 7.5em; }
+@media(min-width: 725px) {
+  .promo .bg-primary {
+    text-align: left; } }
+.promo .img-box {
+  background: url(../img/phone-in-hand.jpg);
+  background-size: cover;
+  background-position: center; }
 
 footer {
   background: #444;
@@ -621,11 +666,13 @@ footer {
 .nav-footer {
   display: flex;
   justify-content: space-around;
-  width: 80%;
   margin: 0 auto; }
   .nav-footer a {
     text-decoration: none;
     font-weight: 700; }
+
+.container--footer {
+  max-width: 25em; }
 
 .btn {
   display: inline-block;
@@ -640,7 +687,8 @@ footer {
   color: white;
   border: 2px solid #d31869; }
   .btn--primary:hover, .btn--primary:focus {
-    background: #8e1047; }
+    background: #8e1047;
+    border-color: #8e1047; }
 
 .btn--secondary {
   border: 2px solid white;
@@ -656,6 +704,30 @@ footer {
   background-position: center;
   padding: 5em 0;
   background-blend-mode: multiply;
-  color: white; }
+  color: white;
+  position: relative;
+  overflow: hidden; }
+@media(min-width: 799px) {
+  .cta {
+    padding: 10em 0; }
+    .cta::before, .cta::after {
+      content: "";
+      display: block;
+      background: #d31869;
+      position: absolute;
+      width: 100%;
+      border: 1em solid white; }
+    .cta::before {
+      top: 0;
+      bottom: -1em;
+      transform: skewX(60deg);
+      left: -100%; }
+    .cta::after {
+      top: -1em;
+      bottom: 0;
+      transform: skewX(60deg);
+      right: -100%; } }
+.container--cta {
+  width: 50%; }
 
 /*# sourceMappingURL=main.css.map */
